@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/navbar.css">
+
+  <title>Home - Exclusive E-Commerce Website</title>
+</head>
+
+<body> 
+  <div class="top_nav">
+    <div class="container top_nav_container">
+      <div class="top_nav_wrapper">
+        <p class="tap_nav_p">
+          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+        </p>
+        <a href="#" class="top_nav_link">SHOP NOW</a>
+      </div>
+
+    </div>
+  </div>
+  <nav class="nav">
+    <div class="container nav_container">
+      <a href="#" class="nav_logo">EXCLUSIVE</a>
+      <ul class="nav_list">
+        <li class="nav_item"><a href="" class="nav_link">Home</a></li>
+        <li class="nav_item"><a href="about.html" class="nav_link">About</a></li>
+        <li class="nav_item"><a href="contact.html" class="nav_link">Contact</a></li>
+        <li class="nav_item"><a href="sign-up.html" class="nav_link">Sign up</a>
+        </li>
+      </ul>
+      <div class="nav_items">
+        <form action="#" class="nav_form">
+          <input type="text" class="nav_input" placeholder="search here...." />
+          <img src="./image/search.png" alt="" class="nav_search" />
+        </form>
+
+        <a href="wishlist.html">
+          <img src="./image/heart.png" alt="" class="nav_heart" />
+        </a>
+        <a href="cart.html">
+          <img src="./image/cart.png" alt="" class="nav_cart" />
+        </a>
+        <div class="account-button">
+          <img class="user-icon" loading="lazy" alt="User Icon" src="./public/user.svg" onclick="togglePopup()" />
+          <div class="account-popup" id="accountPopup">
+            <a href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Logout</a>
+          </div>
+
+        </div>
+
+        <script>
+          function togglePopup() {
+            const popup = document.getElementById('accountPopup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+          }
+
+          window.onclick = function (event) {
+            if (!event.target.closest('.account-button')) {
+              const popups = document.getElementsByClassName('account-popup');
+              for (let i = 0; i < popups.length; i++) {
+                const openPopup = popups[i];
+                if (openPopup.style.display === 'block') {
+                  openPopup.style.display = 'none';
+                }
+              }
+            }
+          }
+        </script>
+      </div>
+      <span class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </span>
+    </div>
+  </nav>
+  <nav class="mobile_nav mobile_nav_hide">
+    <ul class="mobile_nav_list">
+      <li class="mobile_nav_item">
+        <a href="" class="mobile_nav_link">Home</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="about.html" class="mobile_nav_link">About</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="contact.html" class="mobile_nav_link">Contact</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="sign-up.html" class="mobile_nav_link">Sign Up</a>
+      </li>
+      <li class="mobile_nav_item">
+        <a href="cart.html" class="mobile_nav_link">Cart</a>
+      </li>
+    </ul>
+  </nav>
+  <header class="header">
+    <div class="container header_container">
+      <div class="header_filter">
+        <a href="404 erorr.html" class="header_filter_link">
+          Women's Fashion <span class="arrow">▶</span>
+        </a>
+        <a href="404 erorr.html" class="header_filter_link"> 
+          Men's Fashion <span class="arrow">▶</span> </a>
+        <a href="404 erorr.html" class="header_filter_link">Electronics</a>
+        <a href="404 erorr.html" class="header_filter_link">Home &Lifestyle</a>
+        <a href="404 erorr.html" class="header_filter_link">Medicine</a>
+        <a href="404 erorr.html" class="header_filter_link">Sports &Outdoor</a> 
+        <a href="404 erorr.html" class="header_filter_link">Baby's &Toys</a>
+        <a href="404 erorr.html" class="header_filter_link">Groceries &Pets</a>
+        <a href="404 erorr.html" class="header_filter_link">Health &Beauty</a>
+      </div>
+
+      <div class="vertical">
+        <div class="vertical-line"></div>
+      </div>
+
+      <div class="slider-container">
+
+        <div class="slides">
+          <img src="./image/header.png" alt="" class="header_img" id="slide1" />
+          <img src="./image/header.png" alt="" class="header_img" id="slide2" />
+          <img src="./image/header.png" alt="" class="header_img" id="slide3" />
+          <img src="./image/header.png" alt="" class="header_img" id="slide4" />
+        </div>
+        <div class="dots">
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+          <span class="dot" data-slide="3"></span>
+          <span class="dot" data-slide="4"></span>
+        </div>
+      </div>
+      <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+          const totalSlides = dots.length;
+          if (index >= totalSlides) {
+            currentIndex = 0;
+          } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+          } else {
+            currentIndex = index;
+          }
+
+          slides.style.transform = `translateX(${-currentIndex * 104}%)`;
+          dots.forEach(dot => dot.classList.remove('active'));
+          dots[currentIndex].classList.add('active');
+        }
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => {
+            showSlide(index);
+          });
+        });
+
+        function autoPlay() {
+          currentIndex++;
+          if (currentIndex >= dots.length) {
+            currentIndex = 0;
+          }
+          showSlide(currentIndex);
+        }
+
+        setInterval(autoPlay, 2000);
+
+        // Initialize the first slide
+        showSlide(currentIndex);
+
+
+
+      </script>
+
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section_category">
+        <p class="section_category_p">Today's</p>
+      </div>
+      <div class="section_header_flash">
+
+        <h3 class="section_title">Flash Sale</h3>
+
+        <div class="clock">
+          <div class="time-unit">
+            <span>Days</span>
+            <div id="days">00</div>
+          </div>
+          <div class="time-unit">
+            <span>Hours</span>
+            <div id="hours">00</div>
+          </div>
+          <div class="time-unit">
+            <span>Minutes</span>
+            <div id="minutes">00</div>
+          </div>
+          <div class="time-unit">
+            <span>Seconds</span>
+            <div id="seconds">00</div>
+          </div>
+          
+          
+
+        </div>
+        <div></div>
+
+        <!-- <div class="arrow_slide">
+          <a class="prev" id="leftArrow">
+            <img src="./image/icons/iconmonstr-arrow-left-circle-thin.svg" alt="Previous">
+          </a>
+          <a class="next" id="rightArrow">
+            <img src="./image/icons/iconmonstr-arrow-right-circle-thin.svg" alt="Next">
+          </a>
+        </div> -->
+
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-1.png" alt="" class="card_img" />
+                <div class="card_tag">-40%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer"></div>
+
+                </div>
+              </div>
+              <script>
+                // Function to toggle the 'activated' class on the clicked button
+                function toggleHeart(event) {
+                  event.target.classList.toggle("activated");
+                }
+
+                // Function to create and append 25 heart buttons
+                function createHeartButtons() {
+                  const buttonsContainer = document.getElementById("buttonsContainer");
+
+                  for (let i = 0; i < 1; i++) {
+                    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                    svg.setAttribute("fill", "none");
+                    svg.setAttribute("viewBox", "0 0 24 24");
+                    svg.setAttribute("stroke-width", "1.5");
+                    svg.setAttribute("stroke", "currentColor");
+                    svg.setAttribute("class", "card_top_icon");
+                    svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                    svg.addEventListener("click", toggleHeart);
+                    buttonsContainer.appendChild(svg);
+                  }
+                }
+
+                // Create the heart buttons when the page loads
+                document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+              </script>
+              <div class="card_body">
+                <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
+                <div class="product-price">
+                  <span class="offer-price">$120</span>
+                  <span class="sale-price">$160</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(98)</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-2.png" alt="" class="card_img" />
+                <div class="card_tag">-35%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer2"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer2");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">AK-900 Wired Keyboard</h3>
+                <div class="product-price">
+                  <span class="offer-price">$960</span>
+                  <span class="sale-price">$1160</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(78)</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-3.png" alt="" class="card_img" />
+                <div class="card_tag">-30%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer3"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer3");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">IPS LCD Gaming Monitor</h3>
+                <div class="product-price">
+                  <span class="offer-price">$370</span>
+                  <span class="sale-price">$400</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(86)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-4.png" alt="" class="card_img" />
+                <div class="card_tag">-25%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer4"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer4");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">S-Series Comfort chair</h3>
+                <div class="product-price">
+                  <span class="offer-price">$375</span>
+                  <span class="sale-price">$400</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(91)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-5.png" alt="" class="card_img" />
+                <div class="card_tag">-20%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer5"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer5");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">The north coat</h3>
+                <div class="product-price">
+                  <span class="offer-price">$260</span>
+                  <span class="sale-price">$360</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(88)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-6.png" alt="" class="card_img" />
+                <div class="card_tag">-15%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer6"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer6");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">RGB liquid CPU Cooler</h3>
+                <div class="product-price">
+                  <span class="offer-price">$160</span>
+                  <span class="sale-price">$170</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(78)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-7.png" alt="" class="card_img" />
+                <div class="card_tag"> -10%</div>
+
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer7"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer7");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">Gucci duffle bag</h3>
+                <div class="product-price">
+                  <span class="offer-price">$960</span>
+                  <span class="sale-price">$1160</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(98)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-8.png" alt="" class="card_img" />
+                <div class="card_tag">-05%</div>
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer8"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer8");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">Small BookSelf</h3>
+                <div class="product-price">
+                  <span class="offer-price">$360</span>
+                  <span class="sale-price">$400</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(87)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="container_btn">
+
+        <a href="404 erorr.html" class="container_btn_a">VIEW ALL PRODUCTS</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="section_category">
+        <p class="section_category_p">categories</p>
+      </div>
+      <div class="section_header">
+        <h3 class="section_title">Browse by Category</h3>
+        <div class="responsive_arrow">
+          <a class="prev" id="leftArrow2">
+            <img src="./image/icons/fill-with-left-arrow.svg" alt="Previous">
+          </a>
+          <a class="next" id="rightArrow2">
+            <img src="./image/icons/fill-with-right-arrow.svg" alt="Next">
+          </a>
+        </div>
+      </div>
+   
+      <div class="categories">
+        <div class="category">
+          <img src="./image/icons/camera.png" alt="" class="category_icon" />
+          <p class="category_name">Cameras</p>
+        </div>
+        <div class="category">
+          <img src="./image/icons/computer.png" alt="" class="category_icon" />
+          <p class="category_name">Computers</p>
+        </div>
+        <div class="category">
+          <img src="./image/icons/gaming.png" alt="" class="category_icon" />
+          <p class="category_name">Gaming</p>
+        </div>
+        <div class="category">
+          <img src="./image/icons/headphone.png" alt="" class="category_icon" />
+          <p class="category_name">Headphones</p>
+        </div>
+        <div class="category">
+          <img src="./image/icons/phone.png" alt="" class="category_icon" />
+          <p class="category_name">Phones</p>
+        </div>
+        <div class="category">
+          <img src="./image/icons/watch.png" alt="" class="category_icon" />
+          <p class="category_name">Watches</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section_category">
+        <p class="section_category_p">This Month</p>
+      </div>
+      <div class="section_header">
+        <h3 class="section_title">Best Selling Products</h3>
+        <div class="responsive_arrow">
+          <a class="prev" id="leftArrow">
+            <img src="./image/icons/fill-with-left-arrow.svg" alt="Previous">
+          </a>
+          <a class="next" id="rightArrow">
+            <img src="./image/icons/fill-with-right-arrow.svg" alt="Next">
+          </a>
+        </div>
+      </div>
+
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper" id="slider">
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-5.png" alt="" class="card_img" />
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer9"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer9");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">The north coat</h3>
+                <div class="product-price">
+                  <span class="offer-price">$260</span>
+                  <span class="sale-price">$360</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(82)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-6.png" alt="" class="card_img" />
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer10"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer10");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">RGB liquid CPU Cooler</h3>
+                <div class="product-price">
+                  <span class="offer-price">$160</span>
+                  <span class="sale-price">$170</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(76)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-7.png" alt="" class="card_img" />
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer11"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer11");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">Gucci duffle bag</h3>
+                <div class="product-price">
+                  <span class="offer-price">$960</span>
+                  <span class="sale-price">$1160</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(98)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-8.png" alt="" class="card_img" />
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer12"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer12");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">Small BookSelf</h3>
+                <div class="product-price">
+                  <span class="offer-price">$360</span>
+                  <span class="sale-price">$400</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(70)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-1.png" alt="" class="card_img" />
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer13"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer13");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">HAVIT HV-G92 Gamepad</h3>
+                <div class="product-price">
+                  <span class="offer-price">$120</span>
+                  <span class="sale-price">$160</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(98)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <div class="card_top">
+                <img src="./image/items/item-10.png" alt="" class="card_img" />
+                <div class="card_top_icons">
+                  <div class="card_top_icons" id="buttonsContainer14"></div>
+                </div>
+                <script>
+                  // Function to toggle the 'activated' class on the clicked button
+                  function toggleHeart(event) {
+                    event.target.classList.toggle("activated");
+                  }
+
+                  // Function to create and append 25 heart buttons
+                  function createHeartButtons() {
+                    const buttonsContainer = document.getElementById("buttonsContainer14");
+
+                    for (let i = 0; i < 1; i++) {
+                      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                      svg.setAttribute("fill", "none");
+                      svg.setAttribute("viewBox", "0 0 24 24");
+                      svg.setAttribute("stroke-width", "1.5");
+                      svg.setAttribute("stroke", "currentColor");
+                      svg.setAttribute("class", "card_top_icon");
+                      svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                      svg.addEventListener("click", toggleHeart);
+                      buttonsContainer.appendChild(svg);
+                    }
+                  }
+
+                  // Create the heart buttons when the page loads
+                  document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+                </script>
+              </div>
+              <div class="card_body">
+                <h3 class="card_title">CANON EOS DSLR Camera</h3>
+                <div class="product-price">
+                  <span class="offer-price">$360</span>
+                  <span class="sale-price">$400</span>
+                </div>
+                <div class="card_ratings">
+                  <div class="card_stars">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                      <path fill-rule="evenodd"
+                        d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="card_rating_numbers">(82)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('slider');
+            const leftArrow = document.getElementById('leftArrow');
+            const rightArrow = document.getElementById('rightArrow');
+
+            let currentIndex = 0;
+            const cardWidth = document.querySelector('.swiper-slide ').offsetWidth;
+            const visibleCards = Math.floor(slider.offsetWidth / cardWidth);
+
+            const slideLeft = () => {
+              if (currentIndex > 0) {
+                currentIndex--;
+                updateSliderPosition();
+              }
+            };
+
+            const slideRight = () => {
+              if (currentIndex < slider.children.length - visibleCards) {
+                currentIndex++;
+                updateSliderPosition();
+              }
+            };
+
+            const updateSliderPosition = () => {
+              const translateX = -currentIndex * cardWidth;
+              slider.style.transform = `translateX(${translateX}px)`;
+              // Remove the animate class before applying it to reset the animation
+              slider.classList.remove('animate');
+              void slider.offsetWidth;  // Trigger reflow to restart CSS animation
+              slider.classList.add('animate');
+            };
+
+            leftArrow.addEventListener('click', slideLeft);
+            rightArrow.addEventListener('click', slideRight);
+          });
+
+        </script>
+
+      </div>
+      <div class="container_btn">
+        <a href="404 erorr.html" class="container_btn_a">VIEW ALL PRODUCTS</a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="trending">
+        <div class="trending_content">
+          <p class="trending_p">categories</p>
+          <h2 class="trending_title">Enhance Your Music Experience</h2>
+
+          <div class="clock2">
+
+            <div class="circle">
+
+              <span id="Days">00</span>
+
+              <span>Days</span>
+
+            </div>
+
+            <div class="circle">
+
+              <span id="Hours">00</span>
+
+              <span>Hours</span>
+
+            </div>
+
+            <div class="circle">
+
+              <span id="Minutes">00</span>
+
+              <span>Minutes</span>
+
+            </div>
+
+            <div class="circle">
+
+              <span id="Seconds">00</span>
+
+              <span>Seconds</span>
+
+            </div>
+
+          </div>
+
+          <script>
+
+            const days = document.getElementById("Days");
+
+            const hours = document.getElementById("Hours");
+
+            const minutes = document.getElementById("Minutes");
+
+            const seconds = document.getElementById("Seconds");
+
+
+            function updateClock() {
+
+              const now = new Date();
+
+              const day = now.getDate();
+
+              const hour = now.getHours();
+
+              const minute = now.getMinutes();
+
+              const second = now.getSeconds();
+
+
+              days.textContent = day.toString().padStart(2, "0");
+
+              hours.textContent = hour.toString().padStart(2, "0");
+
+              minutes.textContent = minute.toString().padStart(2, "0");
+
+              seconds.textContent = second.toString().padStart(2, "0");
+
+            }
+
+            setInterval(updateClock, 1000);
+
+            updateClock(); // Initialize the clock
+
+          </script>
+          <a href="#" class="trending_btn">Buy Now!</a>
+        </div>
+        <img src="./image/speaker.png" alt="" class="trending_img" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section_category">
+        <p class="section_category_p">Our Products</p>
+      </div>
+      <div class="section_header">
+        <h3 class="section_title">Explore Our Products</h3>
+        <div>
+          <!-- <a class="prev" onclick="prevSlide()">
+            <img src="./image/icons/iconmonstr-arrow-left-circle-thin.svg" alt="Previous">
+          </a>
+          <a class="next" onclick="nextSlide()">
+            <img src="./image/icons/iconmonstr-arrow-right-circle-thin.svg" alt="Next">
+          </a> -->
+          <div class="responsive_arrow">
+            <a class="prev" id="leftArrow">
+              <img src="./image/icons/fill-with-left-arrow.svg" alt="Previous">
+            </a>
+            <a class="next" id="rightArrow">
+              <img src="./image/icons/fill-with-right-arrow.svg" alt="Next">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="products">
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-9.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer15"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer15");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">Breed Dry Dog Food</h3>
+            <p class="card_price">$100</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(87)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-10.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer16"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer16");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">CANON EOS DSLR Camera</h3>
+            <p class="card_price">$360</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(77)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-11.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer17"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer17");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">ASUS FHD Gaming Laptop</h3>
+            <p class="card_price">$700</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(98)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-12.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer18"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer18");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">Kids Electric Car</h3>
+            <p class="card_price">$960</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(76)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-13.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer19"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer19");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">Jr. Zoom Soccer Cleats</h3>
+            <p class="card_price">$1160</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(80)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <a href="product detail.html">
+              <img src="./image/items/item-14.png" alt="" class="card_img" /></a>
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer20"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer20");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">GP11 Shooter USB Gamepad</h3>
+            <p class="card_price">$660</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(85)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-15.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer21"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer21");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">Quilted Satin Jacket</h3>
+            <p class="card_price">$660</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(98)</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card_top">
+            <img src="./image/items/item-16.png" alt="" class="card_img" />
+            <div class="card_top_icons">
+              <div class="card_top_icons" id="buttonsContainer22"></div>
+            </div>
+            <script>
+              // Function to toggle the 'activated' class on the clicked button
+              function toggleHeart(event) {
+                event.target.classList.toggle("activated");
+              }
+
+              // Function to create and append 25 heart buttons
+              function createHeartButtons() {
+                const buttonsContainer = document.getElementById("buttonsContainer22");
+
+                for (let i = 0; i < 1; i++) {
+                  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+                  svg.setAttribute("fill", "none");
+                  svg.setAttribute("viewBox", "0 0 24 24");
+                  svg.setAttribute("stroke-width", "1.5");
+                  svg.setAttribute("stroke", "currentColor");
+                  svg.setAttribute("class", "card_top_icon");
+                  svg.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />`;
+
+                  svg.addEventListener("click", toggleHeart);
+                  buttonsContainer.appendChild(svg);
+                }
+              }
+
+              // Create the heart buttons when the page loads
+              document.addEventListener("DOMContentLoaded", createHeartButtons);
+
+
+
+            </script>
+          </div>
+          <div class="card_body">
+            <h3 class="card_title">Curology Product Set</h3>
+            <p class="card_price">$500</p>
+            <div class="card_ratings">
+              <div class="card_stars">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                  <path fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <p class="card_rating_numbers">(83)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container_btn">
+        <a href="404 erorr.html" class="container_btn_a">VIEW ALL PRODUCTS</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section_category">
+        <p class="section_category_p">Featured</p>
+      </div>
+      <div class="section_header">
+        <h3 class="section_title">New Arrivals</h3>
+      </div>
+      <div class="gallery">
+        <div class="gallery_item gallery_item_1">
+          <img src="./image/gallery/gallery-1.png" alt="" class="gallery_item_img" />
+          <div class="gallery_item_content">
+            <div class="gallery_item_title">Playstation 5</div>
+            <p class="gallery_item_p">
+              Black and White version of the PS5 coming out on sale.
+            </p>
+            <a href="404 erorr.html" class="gallery_item_link">SHOP NOW</a>
+          </div>
+        </div>
+        <div class="gallery_item gallery_item_2">
+          <img src="./image/gallery/gallery-2.png" alt="" class="gallery_item_img" />
+          <div class="gallery_item_content">
+            <div class="gallery_item_title">Women's Collections</div>
+            <p class="gallery_item_p">
+              Featured woman collections that give you another vibe.
+            </p>
+            <a href="404 erorr.html" class="gallery_item_link">SHOP NOW</a>
+          </div>
+        </div>
+        <div class="gallery_item gallery_item_3">
+          <img src="./image/gallery/gallery-3.png" alt="" class="gallery_item_img" />
+          <div class="gallery_item_content">
+            <div class="gallery_item_title">Speakers</div>
+            <p class="gallery_item_p">
+              Amazon wireless speaker.
+            </p>
+            <a href="404 erorr.html" class="gallery_item_link">SHOP NOW</a>
+
+          </div>
+        </div>
+        <div class="gallery_item gallery_item_4">
+          <img src="./image/gallery/gallery-4.png" alt="" class="gallery_item_img" />
+          <div class="gallery_item_content">
+            <div class="gallery_item_title">Perfume</div>
+            <p class="gallery_item_p">
+              GUCCI INTENSE OUD EDP.
+            </p>
+            <a href="404 erorr.html" class="gallery_item_link">SHOP NOW</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container services_container">
+      <div class="service">
+        <img src="./image/icons/service-1.png" alt="" class="service_img" />
+        <h3 class="service_title">FREE AND FAST DELIVERY</h3>
+        <p class="service_p">Free delivery for all orders over $140.</p>
+      </div>
+      <div class="service">
+        <img src="./image/icons/service-2.png" alt="" class="service_img" />
+        <h3 class="service_title">24/7 CUSTOMER SERVICE</h3>
+        <p class="service_p">Friendly 24/7 customer support.</p>
+      </div>
+      <div class="service">
+        <img src="./image/icons/service-3.png" alt="" class="service_img" />
+        <h3 class="service_title">MONEY BACK GUARANTEE</h3>
+        <p class="service_p">We reurn money within 30 days.</p>
+      </div>
+    </div>                  
+  </section>
+
+  <footer class="footer">
+    <div class="container footer_container">
+      <div class="footer_item">
+        <div class="subscribe-button">
+          <div class="logo1">
+            <h3 class="exclusive1">Exclusive</h3>
+          </div>
+          <div class="footer_p">
+            <div class="subscribe">Subscribe</div>
+          </div>
+          <div class="footer_p1">
+            Get 10% off your first order
+          </div>
+          <div class="send-mail">
+            <input class="enter-your-email" placeholder="Enter your email" type="text" />
+
+            <img class="icon-send" alt="" src="./public/iconsend.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="support-parent">
+        <div class="support">Support</div>
+        <div class="bijoy-contact">
+          <div class="bijoy-sarani-dhaka">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</div>
+          <div class="exclusivegmailcom">exclusive@gmail.com</div>
+          <div class="logo-container">+88015-88888-9999</div>
+        </div>
+      </div>
+      <div class="account-parent">
+        <div class="account1">Account</div>
+        <div class="privacy-policy-terms">
+          <div class="my-account">My Account</div>
+          <div class="login-register">Login / Register</div>
+          <div class="cart">Cart</div>
+          <div class="wishlist">Wishlist</div>
+          <div class="shop">Shop</div>
+        </div>
+      </div>
+      <div class="quick-link-parent">
+        <div class="quick-link">Quick Link</div>
+        <div class="privacy-policy-parent">
+          <div class="privacy-policy">Privacy Policy</div>
+          <div class="terms-of-use">Terms Of Use</div>
+          <div class="faq">FAQ</div>
+          <div class="contact1">Contact</div>
+          <div class="social-icons-container-parent">
+            <div class="social-icons-container">
+              <div class="download-app">Download App</div>
+              <div class="footer-link">
+                <div class="save-3-with">Save $3 with App New User Only</div>
+                <div class="terms-of-use1">
+                  <img class="qr-code-icon" loading="lazy" alt="" src="./public/qr-code@2x.png" />
+
+                  <div class="app-store-links">
+                    <img class="googleplay-icon" loading="lazy" alt="" src="./public/googleplay.svg" />
+
+                    <img class="appstore-icon" loading="lazy" alt="" src="./public/appstore@2x.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="social-media-links">
+              <img class="icon-facebook" loading="lazy" alt="" src="./public/iconfacebook.svg" />
+
+              <img class="icon-twitter3" alt="" src="./about/public/icontwitter1.svg" />
+
+              <img class="icon-instagram3" alt="" src="./about/public/iconinstagram1.svg" />
+
+              <img class="icon-linkedin3" alt="" src="./about/public/iconlinkedin1.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  xqq q s  e3e34e34e dd765sa 
+
+    </div>
+    <div class="footer_bottom">
+      <div class="container footer_bottom_container">
+        <p class="footer_copy">
+          Copyright Exclusive 2023. All right reserved
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="./js/app.js"></script>
+
+</body>
+
+</html>
