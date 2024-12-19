@@ -41,11 +41,11 @@ https://mahekchothani02.github.io/E-Commerce-website/
 
 # Contact
 
-Author: Nikhil D.
+Author: MAHEK C.
 
-GitHub: nikhildobariya98
+GitHub: MAHEKCHOTHANI02
 
-LinkedIn: Nikhil Dobariya
+LinkedIn: Mahek Chothani
 
-Email: dobariyanikhil98@gmail.com
+Email: chothaqnimahek1402@gmail.com
 
