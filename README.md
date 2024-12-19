@@ -27,7 +27,7 @@ To preview and run the project on your device:
 
 # Live Demo
 
-
+https://mahekchothani02.github.io/E-Commerce-website/
 
 # Screenshots
 
