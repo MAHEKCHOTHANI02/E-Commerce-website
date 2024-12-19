@@ -1,0 +1,37 @@
+/* Responsive styles */
+@media  (max-width: 1368px) {
+       
+   
+    .clock{
+        font-size: 2rem;
+    }
+ 
+    .responsive_arrow{
+        display: flex;
+        flex-direction: row;
+    }
+   
+
+}
+
+@media (max-width: 768px) {
+
+    
+    .clock{
+        font-size: 1.3rem;
+    }
+    
+    .responsive_arrow{
+        display: flex;
+        flex-direction: row;
+    }
+
+    
+
+}
+
+@media (max-width: 300px) {
+    .clock{
+        font-size: 0.8rem;
+    }
+}
