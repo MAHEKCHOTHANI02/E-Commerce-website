@@ -1,0 +1,17 @@
+window.addEventListener('load', function() {
+    var sliderContainer = document.querySelector('.slider-container');
+    var imgWidth = document.querySelector('.header_img').clientWidth;
+    var cloneImg = document.querySelector('.header_img').cloneNode(true);
+    var imgWidth = document.querySelector('.header_img').clientWidth;
+    var cloneImg = document.querySelector('.header_img').cloneNode(true);
+    sliderContainer.appendChild(cloneImg);
+  });
+  
+
+$('.single-item-rtl').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    rtl: true,
+    autoplaySpeed: 2000,
+  });
+      
