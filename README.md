@@ -47,5 +47,5 @@ GitHub: MAHEKCHOTHANI02
 
 LinkedIn: Mahek Chothani
 
-Email: chothaqnimahek1402@gmail.com
+Email: chothanimahek1402@gmail.com
 
